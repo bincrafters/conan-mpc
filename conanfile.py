@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
 import os
 
@@ -12,7 +10,6 @@ class MpcConan(ConanFile):
     topics = ("conan", "mpc", "multiprecision", "math", "mathematics")
     url = "https://github.com/bincrafters/conan-mpc"
     homepage = "http://www.multiprecision.org/mpc/home.html"
-    author = "Bincrafters <bincrafters@gmail.com>"
     license = "LGPL-3.0-or-later"
     exports = ["LICENSE.md"]
     settings = "os", "arch", "compiler", "build_type"
@@ -28,6 +25,7 @@ class MpcConan(ConanFile):
 
     def configure(self):
         del self.settings.compiler.libcxx
+        del self.settings.compiler.cppstd
 
     def source(self):
         source_url = "https://ftp.gnu.org/gnu/mpc/mpc-%s.tar.gz" % self.version
