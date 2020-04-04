@@ -11,7 +11,6 @@ class MpcConan(ConanFile):
     url = "https://github.com/bincrafters/conan-mpc"
     homepage = "http://www.multiprecision.org/mpc/home.html"
     license = "LGPL-3.0-or-later"
-    exports = ["LICENSE.md"]
     settings = "os", "arch", "compiler", "build_type"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
